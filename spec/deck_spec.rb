@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Cards do
+describe Deck do
   shared_examples_for "a usable deck" do
     it "creates an array" do
       expect(deck.get_cards).to be_a(Array)
@@ -19,7 +19,7 @@ describe Cards do
 
   context "standard deck types" do
     context "standard deck" do
-      let(:cards) { Cards.new(:playing_cards) }
+      let(:cards) { Deck.new(:playing_cards) }
 
       it_behaves_like "a usable deck" do
         let(:deck) { cards }
@@ -31,7 +31,7 @@ describe Cards do
     end
 
     context "standard deck with jokers" do
-      let(:cards) { Cards.new(:playing_cards_with_jokers) }
+      let(:cards) { Deck.new(:playing_cards_with_jokers) }
 
       it_behaves_like "a usable deck" do
         let(:deck) { cards }
@@ -43,7 +43,7 @@ describe Cards do
     end
 
     context "standard uno deck" do
-      let(:cards) { Cards.new(:uno) }
+      let(:cards) { Deck.new(:uno) }
 
       it_behaves_like "a usable deck" do
         let(:deck) { cards }
@@ -57,7 +57,7 @@ describe Cards do
 
   context "custom desk types" do
     context "standard deck" do
-      let(:cards) { Cards.new(33) }
+      let(:cards) { Deck.new(33) }
 
       it_behaves_like "a usable deck" do
         let(:deck) { cards }

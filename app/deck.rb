@@ -1,4 +1,4 @@
-class Cards
+class Deck
 
   DECK_TYPES = [
     :playing_cards,
